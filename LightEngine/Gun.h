@@ -1,13 +1,13 @@
 #pragma once
 #include "Entity.h"
 
-class Zombie: public Entity
+class Gun : public Entity
 {
 public:
-	Zombie(float radius, const sf::Color& color)
+	Gun(float radius, const sf::Color& color)
 		: Entity(radius, color)
 	{
-		mHealth = 4;
+		mHealth = 1;
 		mDamage = 1;
 	}
 
@@ -18,6 +18,6 @@ public:
 	int GetDamage() const;
 
 private:
-	int mHealth;
 	int mDamage;
+	int mHealth;
 };

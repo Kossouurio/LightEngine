@@ -37,6 +37,9 @@
     <ClCompile Include="Plante.cpp">
       <Filter>Sample</Filter>
     </ClCompile>
+    <ClCompile Include="Gun.cpp">
+      <Filter>Sample</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entity.h">
@@ -64,6 +67,9 @@
       <Filter>Sample</Filter>
     </ClInclude>
     <ClInclude Include="Plante.h">
+      <Filter>Sample</Filter>
+    </ClInclude>
+    <ClInclude Include="Gun.h">
       <Filter>Sample</Filter>
     </ClInclude>
   </ItemGroup>
