@@ -9,7 +9,7 @@ void Zombie::OnCollision(Entity* other)
 
 	if (other->IsTag(33))
 	{
-		SetDirection(0.0f, 0, 100.0f);
+		SetSpeed(0.0f);
 	}
 
 	if (other->IsTag(14))

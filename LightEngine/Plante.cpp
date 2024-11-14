@@ -27,14 +27,17 @@ void Plante::OnUpdate()
 	case Plante::Idle:
 		mIsReloading = false;
 		mIsShooting = false;
+		mReloadProgress = 0.0f;
+		mShootProgress = 0.0f;
 		break;
 
 	case Plante::Shooting:
 		mShootProgress += 0.1f;
 		if (mShootProgress >= mShootTime)
 		{
-			mIsShooting = false;
+			mIsShooting = true;
 			mShootProgress = 0.0f;
+			std::cout << "Shooting..." << std::endl;
 			Shoot();
 		}
 		break;
@@ -43,8 +46,9 @@ void Plante::OnUpdate()
 		mReloadProgress += 0.1f;
 		if (mReloadProgress >= mReloadTime)
 		{
-			mIsReloading = false;
+			mIsReloading = true;
 			mReloadProgress = 0.0f;
+			std::cout << "Reloading..." << std::endl;
 			Reload();
 		}
 		break;
@@ -68,19 +72,23 @@ void Plante::Shoot()
 {
 	if (mAmmo > 0)
 	{
-		mIsShooting = true;
 		mAmmo -= 1;
+
+		// Créer un Gun et le positionner
+		Gun* gun = GetScene()->CreateEntity<Gun>(25, sf::Color::Blue);
+		gun->SetPosition(GetPosition().x, GetPosition().y);
+		gun->SetTag(14);
 	}
 	else
 	{
-		mIsReloading = true;
+		TransitionTo(Plante::Reloading);
 	}
 }
 
 void Plante::Reload()
 {
-	mIsReloading = true;
 	mAmmo = 2;
+	TransitionTo(Plante::Idle);
 }
 
 bool Plante::TransitionTo(State newState)

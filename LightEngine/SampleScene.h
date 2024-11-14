@@ -16,16 +16,19 @@ class SampleScene : public Scene
 
 	Zombie* pZombie;
 
-	Gun* pGun;
+	Gun* mGun;
 
-	std::vector<Zombie*>* Zombies1;
-	std::vector<Zombie*>* Zombies2;
-	std::vector<Zombie*>* Zombies3;
+	std::vector<Zombie*> Zombies1;
+	std::vector<Zombie*> Zombies2;
+	std::vector<Zombie*> Zombies3;
 
 private:
 	
 
 public:
+	std::vector<Zombie*>* GetZombies1();
+	std::vector<Zombie*>* GetZombies2();
+	std::vector<Zombie*>* GetZombies3();
 	void Initialize() override;
 	void HandleInput(const sf::Event& event) override;
 	void Update() override;
