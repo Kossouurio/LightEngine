@@ -3,7 +3,7 @@
 ## Plant Vs Zombie
 - No Images
 
-Made with State Machine
+Made with a State Machine
 
 ## Things To ADD And CORRECT 
 - A DeltaTime on the "OnColiding" for the Plante.cpp
