@@ -7,22 +7,6 @@
 
 #include "Debug.h"
 
-
-std::vector<Zombie*>* SampleScene::GetZombies1()
-{
-	return &Zombies1;
-}
-
-std::vector<Zombie*>* SampleScene::GetZombies2()
-{
-	return &Zombies2;
-}
-
-std::vector<Zombie*>* SampleScene::GetZombies3()
-{
-	return &Zombies3;
-}
-
 void SampleScene::Initialize()
 {
 	pEntity1 = CreateEntity<Plante>(75, sf::Color::Green);
